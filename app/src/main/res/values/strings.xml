@@ -1,3 +1,29 @@
 <resources>
     <string name="app_name">Truco</string>
+    <string name="titulo_historico">Histórico de vitórias</string>
+    <string name="txt_sem_historico">Nenhuma partida registrada.</string>
+    <string name="btn_iniciar">Iniciar</string>
+    <string name="btn_historico">Histórico</string>
+    <string name="btn_comecar_partida">Começar partida</string>
+    <string name="label_jogador_2">Jogador 2</string>
+    <string name="label_jogador_1">Jogador 1</string>
+    <string name="titulo_setup">Informe o nome dos jogadores</string>
+    <string name="btn_historico_matchup">Histórico de vitórias</string>
+    <string name="btn_zerar_historico">Zerar histórico</string>
+    <string name="doze">Doze</string>
+    <string name="nove">Nove</string>
+    <string name="seis">Seis</string>
+    <string name="truco">Truco</string>
+    <string name="um">Um</string>
+    <string name="pontuacao_jogador_2">0</string>
+    <string name="nome_jogador_2">Jogador 2</string>
+    <string name="pontuacao_jogador_1">0</string>
+    <string name="nome_jogador_1">Jogador 1</string>
+    <string name="mensagem_erro_nomes_iguais">Os jogadores precisam ter nomes diferentes</string>
+    <string name="mensagem_descarte_dialog">Os pontos desta mão serão perdidos. As vitórias ficam salvas.</string>
+    <string name="titulo_descarte_dialog">Abandonar a mão?</string>
+    <string name="btn_abandonar_dialog">Abandonar</string>
+    <string name="btn_continuar_dialog">Continuar</string>
+    <string name="toast_vitoria">%1$s venceu! Placar: %2$d x %3$d</string>
+    <string name="toast_zerou">Histórico deste confronto zerado! Placar: %1$d x %2$d</string>
 </resources>

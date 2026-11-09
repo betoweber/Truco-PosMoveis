@@ -26,10 +26,6 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".PlacarActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
             android:name=".HistoricoActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />

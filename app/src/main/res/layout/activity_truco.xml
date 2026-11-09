@@ -8,120 +8,160 @@
     android:background="#FFFDE7"
     tools:context=".TrucoActivity">
 
-    <ImageButton
-        android:id="@+id/imageButton7"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="24dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton8"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton8"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <ImageButton
-        android:id="@+id/imageButton6"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="24dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton7"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton7"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <ImageButton
-        android:id="@+id/imageButton9"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="24dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton10"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton10"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <ImageButton
-        android:id="@+id/imageButton10"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/jogadorDois"
-        app:layout_constraintEnd_toEndOf="@+id/jogadorDois"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <ImageButton
-        android:id="@+id/imageButton8"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="24dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton9"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton9"
-        tools:srcCompat="@tools:sample/avatars" />
-
     <TextView
-        android:id="@+id/jogadorUm"
+        android:id="@+id/tvNomeJ1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
-        android:text="Jogador 1"
+        android:text="@string/nome_jogador_1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/jogadorDois"
+        android:id="@+id/tvPtsJ1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="16dp"
-        android:text="Jogador 2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_marginStart="16dp"
+        android:text="@string/pontuacao_jogador_1"
+        app:layout_constraintBottom_toBottomOf="@+id/tvNomeJ1"
+        app:layout_constraintStart_toEndOf="@+id/tvNomeJ1"
+        app:layout_constraintTop_toTopOf="@+id/tvNomeJ1" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/btnJ1Um"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="48dp"
+        android:contentDescription="@string/um"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jogadorUm"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toBottomOf="@+id/tvNomeJ1"
+        tools:srcCompat="@tools:sample/avatars"
+        android:onClick="btnPontuarOnClick" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/btnJ1Tres"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginStart="24dp"
-        app:layout_constraintStart_toEndOf="@+id/imageButton"
-        app:layout_constraintTop_toTopOf="@+id/imageButton"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:contentDescription="@string/truco"
+        app:layout_constraintStart_toEndOf="@+id/btnJ1Um"
+        app:layout_constraintTop_toTopOf="@+id/btnJ1Um"
+        tools:srcCompat="@tools:sample/avatars"
+        android:onClick="btnPontuarOnClick" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/btnJ1Seis"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginStart="24dp"
-        app:layout_constraintStart_toEndOf="@+id/imageButton2"
-        app:layout_constraintTop_toTopOf="@+id/imageButton2"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:contentDescription="@string/seis"
+        app:layout_constraintStart_toEndOf="@+id/btnJ1Tres"
+        app:layout_constraintTop_toTopOf="@+id/btnJ1Tres"
+        tools:srcCompat="@tools:sample/avatars"
+        android:onClick="btnPontuarOnClick" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/btnJ1Nove"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginStart="24dp"
-        app:layout_constraintStart_toEndOf="@+id/imageButton3"
-        app:layout_constraintTop_toTopOf="@+id/imageButton3"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:contentDescription="@string/nove"
+        app:layout_constraintStart_toEndOf="@+id/btnJ1Seis"
+        app:layout_constraintTop_toTopOf="@+id/btnJ1Seis"
+        tools:srcCompat="@tools:sample/avatars"
+        android:onClick="btnPontuarOnClick" />
 
     <ImageButton
-        android:id="@+id/imageButton5"
+        android:id="@+id/btnJ1Doze"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginStart="24dp"
-        app:layout_constraintStart_toEndOf="@+id/imageButton4"
-        app:layout_constraintTop_toTopOf="@+id/imageButton4"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:contentDescription="@string/doze"
+        app:layout_constraintStart_toEndOf="@+id/btnJ1Nove"
+        app:layout_constraintTop_toTopOf="@+id/btnJ1Nove"
+        tools:srcCompat="@tools:sample/avatars"
+        android:onClick="btnPontuarOnClick" />
+
+    <TextView
+        android:id="@+id/tvNomeJ2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/nome_jogador_2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPtsJ2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="@string/pontuacao_jogador_2"
+        app:layout_constraintBottom_toBottomOf="@+id/tvNomeJ2"
+        app:layout_constraintEnd_toStartOf="@+id/tvNomeJ2"
+        app:layout_constraintTop_toTopOf="@+id/tvNomeJ2" />
+
+    <ImageButton
+        android:id="@+id/btnJ2Um"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="24dp"
+        android:contentDescription="@string/um"
+        app:layout_constraintBottom_toBottomOf="@+id/btnJ2Tres"
+        app:layout_constraintEnd_toStartOf="@+id/btnJ2Tres"
+        tools:srcCompat="@tools:sample/avatars"
+        android:onClick="btnPontuarOnClick" />
+
+    <ImageButton
+        android:id="@+id/btnJ2Tres"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnJ2Seis"
+        app:layout_constraintEnd_toStartOf="@+id/btnJ2Seis"
+        android:contentDescription="@string/truco"
+        tools:srcCompat="@tools:sample/avatars"
+        android:onClick="btnPontuarOnClick" />
+
+    <ImageButton
+        android:id="@+id/btnJ2Seis"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="24dp"
+        android:contentDescription="@string/seis"
+        app:layout_constraintBottom_toBottomOf="@+id/btnJ2Nove"
+        app:layout_constraintEnd_toStartOf="@+id/btnJ2Nove"
+        tools:srcCompat="@tools:sample/avatars"
+        android:onClick="btnPontuarOnClick" />
+
+    <ImageButton
+        android:id="@+id/btnJ2Nove"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnJ2Doze"
+        app:layout_constraintEnd_toStartOf="@+id/btnJ2Doze"
+        android:contentDescription="@string/nove"
+        tools:srcCompat="@tools:sample/avatars"
+        android:onClick="btnPontuarOnClick" />
+
+    <ImageButton
+        android:id="@+id/btnJ2Doze"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvNomeJ2"
+        app:layout_constraintEnd_toEndOf="@+id/tvNomeJ2"
+        android:contentDescription="@string/doze"
+        tools:srcCompat="@tools:sample/avatars"
+        android:onClick="btnPontuarOnClick" />
 
     <View
         android:id="@+id/divider"
-        android:layout_width="409dp"
+        android:layout_width="0dp"
         android:layout_height="1dp"
         android:background="?android:attr/listDivider"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -130,21 +170,26 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton11"
+        android:id="@+id/btnZerar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton12"
-        app:layout_constraintTop_toTopOf="@+id/imageButton12"
-        app:srcCompat="@android:drawable/ic_popup_sync" />
+        android:contentDescription="@string/btn_zerar_historico"
+        app:layout_constraintEnd_toStartOf="@+id/btnHistorico"
+        app:layout_constraintTop_toTopOf="@+id/btnHistorico"
+        app:srcCompat="@android:drawable/ic_popup_sync"
+        android:onClick="btnZerarOnClick" />
 
     <ImageButton
-        android:id="@+id/imageButton12"
+        android:id="@+id/btnHistorico"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:contentDescription="@string/btn_historico_matchup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
+        app:srcCompat="@android:drawable/btn_star_big_on"
+        android:onClick="btnHistoricoOnClick" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
