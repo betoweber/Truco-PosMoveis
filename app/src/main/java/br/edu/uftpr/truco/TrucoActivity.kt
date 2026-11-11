@@ -181,6 +181,8 @@ class TrucoActivity : AppCompatActivity() {
             Efeitos.tremer(caixa)
             atualizarFogo(animar = true)
             tvPts.postDelayed({
+                // Se o jogador já pontuou de novo nesse meio-tempo, não derruba o número novo para 0
+                if (pontosJ1 != 0 || pontosJ2 != 0) return@postDelayed
                 Efeitos.contar(tvPts, 12, 0, 300)
                 Efeitos.pulo(caixa, 1.12f)
             }, 750)
@@ -236,6 +238,9 @@ class TrucoActivity : AppCompatActivity() {
     fun btnZerarOnClick(view: View) {
         Efeitos.tremer(boxPlacarJ1)
         Efeitos.tremer(boxPlacarJ2)
+        // Uma contagem ainda em andamento sobrescreveria o "0" que atualizarTela() vai escrever
+        Efeitos.pararContagem(tvPtsJ1)
+        Efeitos.pararContagem(tvPtsJ2)
         pontosJ1 = 0
         pontosJ2 = 0
         vitoriasJ1 = 0

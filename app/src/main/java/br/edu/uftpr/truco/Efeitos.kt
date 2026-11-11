@@ -91,6 +91,11 @@ object Efeitos {
         animador.start()
     }
 
+    /** Interrompe uma contagem em andamento, para ela não sobrescrever um texto definido depois. */
+    fun pararContagem(tv: TextView) {
+        (tv.getTag(R.id.tag_contador) as? ValueAnimator)?.cancel()
+    }
+
     /** "+N" sobe e some, mostrando quanto o jogador acabou de ganhar. */
     fun flutuarGanho(tv: TextView, pontos: Int) {
         tv.animate().cancel()

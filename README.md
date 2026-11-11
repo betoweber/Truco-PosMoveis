@@ -148,6 +148,24 @@ app, todas as caixas pixeladas e o padrão do feltro.
 - **Pelo terminal**: `./gradlew installDebug` com um aparelho conectado.
 - **Dependências**: AppCompat, Material Components, ConstraintLayout e `activity-ktx`.
 
+## Testes
+
+| Tipo | Onde | O que cobre | Comando |
+|---|---|---|---|
+| Unitários (JVM) | `app/src/test/.../EfeitosTest.kt` | regra do fogo: limites 3 / 5 / 7 da sequência | `./gradlew testDebugUnitTest` |
+| Instrumentação (Espresso) | `app/src/androidTest/.../` | `MainActivityTest`, `SetupActivityTest`, `TrucoActivityTest`, `HistoricoActivityTest` | `./gradlew connectedDebugAndroidTest` |
+
+Os de instrumentação cobrem: pontuar com cada carta, vitória em ≥ 12 (e placares zerados), resultado devolvido ao
+Setup (`setResult`), fogo acendendo/apagando, Zerar, rotação, diálogo ao abandonar a mão, validação dos nomes
+(iguais, vazios, espaços, filtro do `|`, limite de 16) e o fluxo completo Setup → Truco → Setup → Histórico, com
+confrontos separados e a ordem dos nomes trocada. Precisam de um emulador/aparelho conectado; as animações do
+sistema são desligadas pelo Gradle (`animationsDisabled`) porque o Espresso não espera por elas. A lógica de
+confrontos vive dentro do `SetupActivity` (privada), então é testada pela interface e não por testes unitários.
+
+> **Atenção:** ao desligar as animações, o emulador pode ficar com elas em 0 depois dos testes. Para restaurar:
+> `adb shell settings put global animator_duration_scale 1.0` (e o mesmo para `window_animation_scale` e
+> `transition_animation_scale`).
+
 ## Relação com o enunciado
 
 | Pedido | No app |
@@ -168,8 +186,8 @@ contadores fixos, trocar um nome faria o novo jogador herdar as vitórias do ant
   enunciado aceita variáveis em memória; persistir em disco (SharedPreferences) mexeria só no Setup.
 - **O Toast usa layout próprio** (`setView`, deprecated), o que funciona na API 37 testada, mas pode se
   comportar diferente em outras versões.
-- **Verificação**: feita à mão no emulador (retrato e paisagem), com o lint sem erros. Não há testes automatizados
-  além dos exemplos do template.
+- **Verificação**: testes automatizados (seção abaixo), conferência manual no emulador (retrato e paisagem) e lint
+  sem erros. Os testes foram gerados com ajuda de IA e revisados.
 - **Fora de escopo**: regras reais do truco (mão de onze, truco/retruco), desfazer pontos e apagar um confronto
   individual do histórico.
 

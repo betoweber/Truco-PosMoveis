@@ -26,6 +26,10 @@ android {
             }
         }
     }
+    testOptions {
+        // O app tem animações próprias e o Espresso não espera por elas
+        animationsDisabled = true
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
