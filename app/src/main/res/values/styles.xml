@@ -1,0 +1,217 @@
+<resources>
+
+    <!-- Raiz da família de estilos Truco.* (a herança implícita pelo ponto precisa dela) -->
+    <style name="Truco" />
+
+    <!-- ===== Mesa (tela do Truco): empilhada em retrato, lado a lado em paisagem ===== -->
+    <style name="Truco.MesaContainer">
+        <item name="android:orientation">vertical</item>
+    </style>
+    <style name="Truco.MesaFranja">
+        <item name="android:orientation">horizontal</item>
+    </style>
+    <style name="Truco.MesaPainel">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:clipChildren">false</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">@dimen/mesa_margem</item>
+    </style>
+
+    <!-- ===== Texto ===== -->
+    <style name="Truco.Texto">
+        <item name="android:fontFamily">@font/silkscreen</item>
+        <item name="android:textColor">@color/cream</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Truco.Titulo" parent="Truco.Texto">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:shadowColor">@color/ink</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">4</item>
+        <item name="android:shadowRadius">1</item>
+    </style>
+
+    <style name="Truco.Tag" parent="Truco.Texto">
+        <item name="android:minHeight">40dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingStart">14dp</item>
+        <item name="android:paddingEnd">14dp</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:paddingBottom">9dp</item>
+        <item name="android:shadowColor">@color/ink</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowRadius">1</item>
+    </style>
+    <style name="Truco.Tag.J1">
+        <item name="android:background">@drawable/bg_tag_azul</item>
+    </style>
+    <style name="Truco.Tag.J2">
+        <item name="android:background">@drawable/bg_tag_vermelho</item>
+    </style>
+
+    <style name="Truco.Badge" parent="Truco.Texto">
+        <item name="android:minHeight">40dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/ink</item>
+        <item name="android:background">@drawable/bg_badge</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:paddingBottom">9dp</item>
+    </style>
+
+    <style name="Truco.Placar" parent="Truco.Texto">
+        <item name="android:textSize">@dimen/placar_tamanho</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:minWidth">@dimen/placar_largura_min</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">14dp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:shadowColor">@color/ink</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">6</item>
+        <item name="android:shadowRadius">1</item>
+    </style>
+    <style name="Truco.Placar.J1">
+        <item name="android:background">@drawable/bg_placar_azul</item>
+    </style>
+    <style name="Truco.Placar.J2">
+        <item name="android:background">@drawable/bg_placar_vermelho</item>
+    </style>
+
+    <style name="Truco.Ganho" parent="Truco.Texto">
+        <item name="android:textSize">26sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/gold</item>
+        <item name="android:shadowColor">@color/ink</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">3</item>
+        <item name="android:shadowRadius">1</item>
+    </style>
+
+    <!-- ===== Botões com "lábio" (AppCompatButton) ===== -->
+    <style name="Truco.Botao" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/bg_botao_vermelho</item>
+        <item name="android:fontFamily">@font/silkscreen</item>
+        <item name="android:textColor">@color/cream</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:minHeight">60dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:shadowColor">@color/ink</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowRadius">1</item>
+    </style>
+    <style name="Truco.Botao.Vermelho">
+        <item name="android:background">@drawable/bg_botao_vermelho</item>
+    </style>
+    <style name="Truco.Botao.Azul">
+        <item name="android:background">@drawable/bg_botao_azul</item>
+    </style>
+    <style name="Truco.Botao.Verde">
+        <item name="android:background">@drawable/bg_botao_verde</item>
+    </style>
+
+    <!-- Botão quadrado de ícone (Zerar / Histórico) -->
+    <style name="Truco.BotaoIcone">
+        <item name="android:layout_width">56dp</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:background">@drawable/bg_botao_cinza</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:paddingBottom">14dp</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+
+    <!-- ===== Campos de texto ===== -->
+    <style name="Truco.TextInput" parent="Widget.Material3.TextInputLayout.FilledBox">
+        <item name="boxBackgroundMode">none</item>
+        <item name="hintEnabled">false</item>
+        <item name="errorEnabled">false</item>
+        <item name="errorIconDrawable">@null</item>
+        <item name="errorTextColor">@color/error_text</item>
+        <item name="errorTextAppearance">@style/Truco.TextoErro</item>
+    </style>
+    <style name="Truco.TextInput.J1" />
+    <style name="Truco.TextInput.J2" />
+
+    <style name="Truco.Erro" parent="Truco.Texto">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@color/error_text</item>
+    </style>
+
+    <style name="Truco.TextoErro" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:fontFamily">@font/silkscreen</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="Truco.EditText" parent="Widget.AppCompat.EditText">
+        <item name="android:fontFamily">@font/silkscreen</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">14dp</item>
+        <item name="android:textColorHint">@color/text_dim</item>
+        <item name="android:textColor">@color/cream</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:inputType">textPersonName|textCapWords</item>
+        <item name="android:maxLength">16</item>
+    </style>
+
+    <!-- Fogo da sequência (sprite 12x16, 6dp por pixel) -->
+    <style name="Truco.Fogo">
+        <item name="android:layout_width">72dp</item>
+        <item name="android:layout_height">96dp</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:importantForAccessibility">no</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <!-- Janela do diálogo: transparente, a caixa pixelada vem do layout -->
+    <style name="Truco.Dialogo" parent="Theme.Material3.Dark.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimAmount">0.65</item>
+    </style>
+
+    <!-- ===== Toast ===== -->
+    <style name="Truco.Toast" parent="Truco.Texto">
+        <item name="android:background">@drawable/bg_toast</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxWidth">320dp</item>
+        <item name="android:paddingStart">18dp</item>
+        <item name="android:paddingEnd">18dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">18dp</item>
+    </style>
+
+    <!-- ===== Histórico ===== -->
+    <style name="Truco.ItemHistorico" parent="Truco.Texto">
+        <item name="android:background">@drawable/bg_item_historico</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:paddingBottom">22dp</item>
+    </style>
+</resources>

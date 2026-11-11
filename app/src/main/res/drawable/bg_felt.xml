@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Feltro da mesa: base escura + brilho radial + losangos em "pixels" grandes -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/felt_dark" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:centerColor="@color/felt_mid"
+                android:centerX="0.5"
+                android:centerY="0.42"
+                android:endColor="@color/felt_dark"
+                android:gradientRadius="85%p"
+                android:startColor="@color/felt_light"
+                android:type="radial" />
+        </shape>
+    </item>
+    <item>
+        <bitmap
+            android:src="@drawable/felt_pattern"
+            android:tileMode="repeat" />
+    </item>
+</layer-list>

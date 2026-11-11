@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="error_text">#FF8A80</color>
+    <color name="felt_strip">#0F332C</color>
+</resources>

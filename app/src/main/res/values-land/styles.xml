@@ -1,0 +1,18 @@
+<resources>
+    <!-- Em paisagem os dois jogadores ficam lado a lado e a franja vira coluna -->
+    <style name="Truco.MesaContainer">
+        <item name="android:orientation">horizontal</item>
+    </style>
+    <style name="Truco.MesaFranja">
+        <item name="android:orientation">vertical</item>
+    </style>
+    <style name="Truco.MesaPainel">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:clipChildren">false</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">@dimen/mesa_margem</item>
+    </style>
+</resources>

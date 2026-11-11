@@ -5,41 +5,41 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFDE7"
     android:clipToPadding="false"
     android:fillViewport="true"
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="48dp">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/logo"
-            android:layout_width="250dp"
-            android:layout_height="300dp"
-            android:layout_marginTop="64dp"
-            android:importantForAccessibility="no"
+            android:layout_width="@dimen/logo_largura"
+            android:layout_height="@dimen/logo_altura"
+            android:layout_marginTop="@dimen/logo_margem_topo"
+            android:contentDescription="@string/desc_logo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/truco_logo" />
+            app:srcCompat="@drawable/logo_truco" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnIniciar"
+            style="@style/Truco.Botao.Vermelho"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="64dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="64dp"
-            android:backgroundTint="#B3202A"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="@dimen/main_botao_margem_topo"
+            android:layout_marginEnd="48dp"
+            android:layout_marginBottom="32dp"
             android:onClick="btnIniciarOnClick"
             android:text="@string/btn_iniciar"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/logo"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_bias="1.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

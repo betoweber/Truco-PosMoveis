@@ -26,4 +26,7 @@
     <string name="btn_continuar_dialog">Continuar</string>
     <string name="toast_vitoria">%1$s venceu! Placar: %2$d x %3$d</string>
     <string name="toast_zerou">Histórico deste confronto zerado! Placar: %1$d x %2$d</string>
+    <string name="desc_logo">Logo do Truco</string>
+    <string name="label_vitorias">VITÓRIAS %1$d</string>
+    <string name="ganho_pontos">+%1$d</string>
 </resources>

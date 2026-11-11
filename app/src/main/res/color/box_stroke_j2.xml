@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Borda do campo: cor viva com foco, versão escura sem foco -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="@color/red" android:state_focused="true" />
+    <item android:color="@color/red_dark" />
+</selector>

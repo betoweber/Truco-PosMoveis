@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Gerado por tools/gen_assets.py: caixa pixelada (canto em degrau). -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+        <item android:left="8dp" android:top="6dp" android:right="8dp" android:bottom="0dp">
+            <shape android:shape="rectangle"><solid android:color="@color/ink" /></shape>
+        </item>
+        <item android:left="4dp" android:top="10dp" android:right="4dp" android:bottom="4dp">
+            <shape android:shape="rectangle"><solid android:color="@color/ink" /></shape>
+        </item>
+        <item android:left="0dp" android:top="14dp" android:right="0dp" android:bottom="8dp">
+            <shape android:shape="rectangle"><solid android:color="@color/ink" /></shape>
+        </item>
+        <item android:left="8dp" android:top="10dp" android:right="8dp" android:bottom="4dp">
+            <shape android:shape="rectangle"><solid android:color="@color/ink" /></shape>
+        </item>
+        <item android:left="4dp" android:top="14dp" android:right="4dp" android:bottom="8dp">
+            <shape android:shape="rectangle"><solid android:color="@color/ink" /></shape>
+        </item>
+        <item android:left="8dp" android:top="0dp" android:right="8dp" android:bottom="6dp">
+            <shape android:shape="rectangle"><solid android:color="@color/red" /></shape>
+        </item>
+        <item android:left="4dp" android:top="4dp" android:right="4dp" android:bottom="10dp">
+            <shape android:shape="rectangle"><solid android:color="@color/red" /></shape>
+        </item>
+        <item android:left="0dp" android:top="8dp" android:right="0dp" android:bottom="14dp">
+            <shape android:shape="rectangle"><solid android:color="@color/red" /></shape>
+        </item>
+        <item android:left="8dp" android:top="4dp" android:right="8dp" android:bottom="10dp">
+            <shape android:shape="rectangle"><solid android:color="@color/panel_dark" /></shape>
+        </item>
+        <item android:left="4dp" android:top="8dp" android:right="4dp" android:bottom="14dp">
+            <shape android:shape="rectangle"><solid android:color="@color/panel_dark" /></shape>
+        </item>
+</layer-list>

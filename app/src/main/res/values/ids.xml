@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Guarda o animador de contagem em andamento dentro do próprio TextView -->
+    <item name="tag_contador" type="id" />
+    <item name="tag_fogo" type="id" />
+    <item name="tag_fogo_nivel" type="id" />
+</resources>

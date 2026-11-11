@@ -5,7 +5,6 @@ import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -16,7 +15,7 @@ class HistoricoActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        edgeToEdgeEscuro()
         setContentView(R.layout.activity_historico)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars =
@@ -28,7 +27,7 @@ class HistoricoActivity : AppCompatActivity() {
         lvHistorico = findViewById(R.id.lvHistorico)
         tvVazio = findViewById(R.id.tvVazio)
         val linhas = intent.getStringArrayListExtra(EXTRA_LINHAS) ?: ArrayList()
-        lvHistorico.adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, linhas)
+        lvHistorico.adapter = ArrayAdapter(this, R.layout.item_historico, linhas)
 
         if (linhas.isEmpty()) tvVazio.visibility = View.VISIBLE
     }

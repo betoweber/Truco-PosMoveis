@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Gerado por tools/gen_assets.py. Não editar à mão. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="12dp"
+    android:height="16dp"
+    android:viewportWidth="12"
+    android:viewportHeight="16">
+    <path android:fillColor="#F7D046" android:pathData="M7,9h1v1h-1z M7,10h2v1h-2z M6,11h3v1h-3z M6,12h3v1h-3z M6,13h3v1h-3z" />
+    <path android:fillColor="#F28A2E" android:pathData="M6,5h2v1h-2z M6,6h3v1h-3z M5,7h5v1h-5z M5,8h5v1h-5z M5,9h2v1h-2z M8,9h2v1h-2z M4,10h3v1h-3z M9,10h2v1h-2z M4,11h2v1h-2z M9,11h2v1h-2z M4,12h2v1h-2z M9,12h2v1h-2z M4,13h2v1h-2z M9,13h1v1h-1z M4,14h5v1h-5z" />
+    <path android:fillColor="#C62828" android:pathData="M5,0h1v1h-1z M5,1h2v1h-2z M4,2h3v1h-3z M9,2h1v1h-1z M4,3h4v1h-4z M9,3h2v1h-2z M3,4h9v1h-9z M3,5h3v1h-3z M8,5h4v1h-4z M2,6h4v1h-4z M9,6h3v1h-3z M2,7h3v1h-3z M10,7h2v1h-2z M1,8h4v1h-4z M10,8h2v1h-2z M1,9h4v1h-4z M10,9h2v1h-2z M1,10h3v1h-3z M11,10h1v1h-1z M1,11h3v1h-3z M11,11h1v1h-1z M1,12h3v1h-3z M11,12h1v1h-1z M2,13h2v1h-2z M10,13h1v1h-1z M3,14h1v1h-1z M9,14h1v1h-1z M4,15h6v1h-6z" />
+</vector>

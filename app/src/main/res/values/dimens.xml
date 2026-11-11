@@ -1,0 +1,10 @@
+<resources>
+    <dimen name="mesa_margem">12dp</dimen>
+    <dimen name="carta_espaco">4dp</dimen>
+    <dimen name="placar_largura_min">230dp</dimen>
+    <dimen name="placar_tamanho">80sp</dimen>
+    <dimen name="logo_largura">294dp</dimen>
+    <dimen name="logo_altura">266dp</dimen>
+    <dimen name="logo_margem_topo">64dp</dimen>
+    <dimen name="main_botao_margem_topo">32dp</dimen>
+</resources>

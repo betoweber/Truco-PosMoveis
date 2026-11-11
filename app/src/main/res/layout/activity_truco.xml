@@ -1,195 +1,354 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<!-- Mesa: em retrato os jogadores ficam empilhados; em paisagem, lado a lado
+     (a orientação vem de Truco.MesaContainer / Truco.MesaFranja em values e values-land). -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    style="@style/Truco.MesaContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFDE7"
     tools:context=".TrucoActivity">
 
-    <TextView
-        android:id="@+id/tvNomeJ1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/nome_jogador_1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <!-- ======== Jogador 1 ======== -->
+        <LinearLayout
+            android:id="@+id/painelJ1"
+            style="@style/Truco.MesaPainel"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/mesa_margem">
 
-    <TextView
-        android:id="@+id/tvPtsJ1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="@string/pontuacao_jogador_1"
-        app:layout_constraintBottom_toBottomOf="@+id/tvNomeJ1"
-        app:layout_constraintStart_toEndOf="@+id/tvNomeJ1"
-        app:layout_constraintTop_toTopOf="@+id/tvNomeJ1" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
-    <ImageButton
-        android:id="@+id/btnJ1Um"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="48dp"
-        android:contentDescription="@string/um"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvNomeJ1"
-        tools:srcCompat="@tools:sample/avatars"
-        android:onClick="btnPontuarOnClick" />
+                <TextView
+                    android:id="@+id/tvNomeJ1"
+                    style="@style/Truco.Tag.J1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxWidth="190dp"
+                    android:maxLines="1"
+                    android:text="@string/nome_jogador_1" />
 
-    <ImageButton
-        android:id="@+id/btnJ1Tres"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="24dp"
-        android:contentDescription="@string/truco"
-        app:layout_constraintStart_toEndOf="@+id/btnJ1Um"
-        app:layout_constraintTop_toTopOf="@+id/btnJ1Um"
-        tools:srcCompat="@tools:sample/avatars"
-        android:onClick="btnPontuarOnClick" />
+                <TextView
+                    android:id="@+id/tvVitoriasJ1"
+                    style="@style/Truco.Badge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    tools:text="VITÓRIAS 0" />
+            </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/btnJ1Seis"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="24dp"
-        android:contentDescription="@string/seis"
-        app:layout_constraintStart_toEndOf="@+id/btnJ1Tres"
-        app:layout_constraintTop_toTopOf="@+id/btnJ1Tres"
-        tools:srcCompat="@tools:sample/avatars"
-        android:onClick="btnPontuarOnClick" />
+            <FrameLayout
+                android:id="@+id/zonaPlacarJ1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="14dp"
+                android:clipChildren="false"
+                android:clipToPadding="false">
 
-    <ImageButton
-        android:id="@+id/btnJ1Nove"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="24dp"
-        android:contentDescription="@string/nove"
-        app:layout_constraintStart_toEndOf="@+id/btnJ1Seis"
-        app:layout_constraintTop_toTopOf="@+id/btnJ1Seis"
-        tools:srcCompat="@tools:sample/avatars"
-        android:onClick="btnPontuarOnClick" />
+                <!-- Fogo da sequência: desenhado antes da caixa, então fica atrás dela -->
+                <ImageView
+                    android:id="@+id/ivFogoEsqJ1"
+                    style="@style/Truco.Fogo"
+                    android:contentDescription="@null"
+                    android:layout_gravity="start|bottom"
+                    android:layout_marginStart="-52dp" />
 
-    <ImageButton
-        android:id="@+id/btnJ1Doze"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="24dp"
-        android:contentDescription="@string/doze"
-        app:layout_constraintStart_toEndOf="@+id/btnJ1Nove"
-        app:layout_constraintTop_toTopOf="@+id/btnJ1Nove"
-        tools:srcCompat="@tools:sample/avatars"
-        android:onClick="btnPontuarOnClick" />
+                <ImageView
+                    android:id="@+id/ivFogoDirJ1"
+                    style="@style/Truco.Fogo"
+                    android:contentDescription="@null"
+                    android:layout_gravity="end|bottom"
+                    android:layout_marginEnd="-52dp"
+                    android:rotationY="180" />
 
-    <TextView
-        android:id="@+id/tvNomeJ2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/nome_jogador_2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+                <FrameLayout
+                    android:id="@+id/boxPlacarJ1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clipChildren="false">
 
-    <TextView
-        android:id="@+id/tvPtsJ2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="@string/pontuacao_jogador_2"
-        app:layout_constraintBottom_toBottomOf="@+id/tvNomeJ2"
-        app:layout_constraintEnd_toStartOf="@+id/tvNomeJ2"
-        app:layout_constraintTop_toTopOf="@+id/tvNomeJ2" />
+                    <TextView
+                        android:id="@+id/tvPtsJ1"
+                        style="@style/Truco.Placar.J1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pontuacao_jogador_1" />
 
-    <ImageButton
-        android:id="@+id/btnJ2Um"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="24dp"
-        android:contentDescription="@string/um"
-        app:layout_constraintBottom_toBottomOf="@+id/btnJ2Tres"
-        app:layout_constraintEnd_toStartOf="@+id/btnJ2Tres"
-        tools:srcCompat="@tools:sample/avatars"
-        android:onClick="btnPontuarOnClick" />
+                    <TextView
+                        android:id="@+id/tvGanhoJ1"
+                        style="@style/Truco.Ganho"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top|end"
+                        android:layout_marginTop="-6dp"
+                        android:layout_marginEnd="10dp"
+                        android:visibility="invisible"
+                        tools:text="+3" />
+                </FrameLayout>
+            </FrameLayout>
 
-    <ImageButton
-        android:id="@+id/btnJ2Tres"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="24dp"
-        app:layout_constraintBottom_toBottomOf="@+id/btnJ2Seis"
-        app:layout_constraintEnd_toStartOf="@+id/btnJ2Seis"
-        android:contentDescription="@string/truco"
-        tools:srcCompat="@tools:sample/avatars"
-        android:onClick="btnPontuarOnClick" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-    <ImageButton
-        android:id="@+id/btnJ2Seis"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="24dp"
-        android:contentDescription="@string/seis"
-        app:layout_constraintBottom_toBottomOf="@+id/btnJ2Nove"
-        app:layout_constraintEnd_toStartOf="@+id/btnJ2Nove"
-        tools:srcCompat="@tools:sample/avatars"
-        android:onClick="btnPontuarOnClick" />
+            <ImageButton
+                android:id="@+id/btnJ1Um"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/carta_espaco"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@drawable/bg_carta_1"
+                android:contentDescription="@string/um"
+                android:onClick="btnPontuarOnClick"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_carta_1" />
+            <ImageButton
+                android:id="@+id/btnJ1Tres"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/carta_espaco"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@drawable/bg_carta_3"
+                android:contentDescription="@string/truco"
+                android:onClick="btnPontuarOnClick"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_carta_3" />
+            <ImageButton
+                android:id="@+id/btnJ1Seis"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/carta_espaco"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@drawable/bg_carta_6"
+                android:contentDescription="@string/seis"
+                android:onClick="btnPontuarOnClick"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_carta_6" />
+            <ImageButton
+                android:id="@+id/btnJ1Nove"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/carta_espaco"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@drawable/bg_carta_9"
+                android:contentDescription="@string/nove"
+                android:onClick="btnPontuarOnClick"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_carta_9" />
+            <ImageButton
+                android:id="@+id/btnJ1Doze"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/carta_espaco"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@drawable/bg_carta_12"
+                android:contentDescription="@string/doze"
+                android:onClick="btnPontuarOnClick"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_carta_12" />
+            </LinearLayout>
+        </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/btnJ2Nove"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="24dp"
-        app:layout_constraintBottom_toBottomOf="@+id/btnJ2Doze"
-        app:layout_constraintEnd_toStartOf="@+id/btnJ2Doze"
-        android:contentDescription="@string/nove"
-        tools:srcCompat="@tools:sample/avatars"
-        android:onClick="btnPontuarOnClick" />
+        <!-- ======== Franja central ======== -->
+        <LinearLayout
+            android:id="@+id/franja"
+            style="@style/Truco.MesaFranja"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_franja"
+            android:gravity="center"
+            android:padding="8dp">
 
-    <ImageButton
-        android:id="@+id/btnJ2Doze"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/tvNomeJ2"
-        app:layout_constraintEnd_toEndOf="@+id/tvNomeJ2"
-        android:contentDescription="@string/doze"
-        tools:srcCompat="@tools:sample/avatars"
-        android:onClick="btnPontuarOnClick" />
+            <ImageButton
+                android:id="@+id/btnZerar"
+                style="@style/Truco.BotaoIcone"
+                android:layout_margin="4dp"
+                android:contentDescription="@string/btn_zerar_historico"
+                android:onClick="btnZerarOnClick"
+                android:src="@drawable/ic_zerar" />
 
-    <View
-        android:id="@+id/divider"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <ImageButton
+                android:id="@+id/btnHistorico"
+                style="@style/Truco.BotaoIcone"
+                android:layout_margin="4dp"
+                android:contentDescription="@string/btn_historico_matchup"
+                android:onClick="btnHistoricoOnClick"
+                android:src="@drawable/ic_historico" />
+        </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/btnZerar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:contentDescription="@string/btn_zerar_historico"
-        app:layout_constraintEnd_toStartOf="@+id/btnHistorico"
-        app:layout_constraintTop_toTopOf="@+id/btnHistorico"
-        app:srcCompat="@android:drawable/ic_popup_sync"
-        android:onClick="btnZerarOnClick" />
+        <!-- ======== Jogador 2 ======== -->
+        <LinearLayout
+            android:id="@+id/painelJ2"
+            style="@style/Truco.MesaPainel"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/mesa_margem">
 
-    <ImageButton
-        android:id="@+id/btnHistorico"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:contentDescription="@string/btn_historico_matchup"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/btn_star_big_on"
-        android:onClick="btnHistoricoOnClick" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/tvNomeJ2"
+                    style="@style/Truco.Tag.J2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxWidth="190dp"
+                    android:maxLines="1"
+                    android:text="@string/nome_jogador_2" />
+
+                <TextView
+                    android:id="@+id/tvVitoriasJ2"
+                    style="@style/Truco.Badge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    tools:text="VITÓRIAS 0" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/zonaPlacarJ2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="14dp"
+                android:clipChildren="false"
+                android:clipToPadding="false">
+
+                <!-- Fogo da sequência: desenhado antes da caixa, então fica atrás dela -->
+                <ImageView
+                    android:id="@+id/ivFogoEsqJ2"
+                    style="@style/Truco.Fogo"
+                    android:contentDescription="@null"
+                    android:layout_gravity="start|bottom"
+                    android:layout_marginStart="-52dp" />
+
+                <ImageView
+                    android:id="@+id/ivFogoDirJ2"
+                    style="@style/Truco.Fogo"
+                    android:contentDescription="@null"
+                    android:layout_gravity="end|bottom"
+                    android:layout_marginEnd="-52dp"
+                    android:rotationY="180" />
+
+                <FrameLayout
+                    android:id="@+id/boxPlacarJ2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clipChildren="false">
+
+                    <TextView
+                        android:id="@+id/tvPtsJ2"
+                        style="@style/Truco.Placar.J2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pontuacao_jogador_2" />
+
+                    <TextView
+                        android:id="@+id/tvGanhoJ2"
+                        style="@style/Truco.Ganho"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top|end"
+                        android:layout_marginTop="-6dp"
+                        android:layout_marginEnd="10dp"
+                        android:visibility="invisible"
+                        tools:text="+3" />
+                </FrameLayout>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btnJ2Um"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/carta_espaco"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@drawable/bg_carta_1"
+                android:contentDescription="@string/um"
+                android:onClick="btnPontuarOnClick"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_carta_1" />
+            <ImageButton
+                android:id="@+id/btnJ2Tres"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/carta_espaco"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@drawable/bg_carta_3"
+                android:contentDescription="@string/truco"
+                android:onClick="btnPontuarOnClick"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_carta_3" />
+            <ImageButton
+                android:id="@+id/btnJ2Seis"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/carta_espaco"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@drawable/bg_carta_6"
+                android:contentDescription="@string/seis"
+                android:onClick="btnPontuarOnClick"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_carta_6" />
+            <ImageButton
+                android:id="@+id/btnJ2Nove"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/carta_espaco"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@drawable/bg_carta_9"
+                android:contentDescription="@string/nove"
+                android:onClick="btnPontuarOnClick"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_carta_9" />
+            <ImageButton
+                android:id="@+id/btnJ2Doze"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/carta_espaco"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@drawable/bg_carta_12"
+                android:contentDescription="@string/doze"
+                android:onClick="btnPontuarOnClick"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_carta_12" />
+            </LinearLayout>
+        </LinearLayout>
+
+</LinearLayout>

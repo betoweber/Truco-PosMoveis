@@ -2,4 +2,31 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Feltro da mesa -->
+    <color name="felt_dark">#0B2B26</color>
+    <color name="felt_mid">#14473D</color>
+    <color name="felt_light">#1F6554</color>
+
+    <!-- Painéis (cinza-ardósia) -->
+    <color name="ink">#14201F</color>
+    <color name="panel">#2F3E3F</color>
+    <color name="panel_dark">#1B2627</color>
+    <color name="panel_light">#4A5C5D</color>
+
+    <!-- Texto -->
+    <color name="cream">#F4EBD6</color>
+    <color name="text_dim">#9FB3AD</color>
+
+    <!-- Cores de ação (face / lábio) -->
+    <color name="red">#E8453C</color>
+    <color name="red_dark">#A32A24</color>
+    <color name="blue">#3FA0FF</color>
+    <color name="blue_dark">#1C5A9E</color>
+    <color name="gold">#F0B940</color>
+    <color name="gold_dark">#A87B1B</color>
+    <color name="green">#3DBB8A</color>
+    <color name="green_dark">#237A57</color>
+    <color name="orange">#F28A2E</color>
+    <color name="orange_dark">#A8561A</color>
 </resources>
